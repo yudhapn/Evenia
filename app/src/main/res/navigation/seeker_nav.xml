@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/seeker_nav"
+    app:startDestination="@id/seeker_home_dest">
+
+    <fragment
+        android:id="@+id/seeker_home_dest"
+        android:name="com.gemastik.evenia.ui.SeekerHomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_seeker_home" >
+        <action
+            android:id="@+id/action_detail_event"
+            app:destination="@id/seeker_detail_event_dest"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/seeker_profile_dest"
+        android:name="com.gemastik.evenia.ui.SeekerProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_seeker_profile" />
+    <fragment
+        android:id="@+id/seeker_vacancy_dest"
+        android:name="com.gemastik.evenia.ui.SeekerVacancyFragment"
+        android:label="Vacancy"
+        tools:layout="@layout/fragment_seeker_vacancy" />
+    <fragment
+        android:id="@+id/seeker_detail_event_dest"
+        android:name="com.gemastik.evenia.ui.SeekerDetailEventFragment"
+        android:label="Detail Event"
+        tools:layout="@layout/fragment_seeker_detail_event" >
+        <argument
+            android:name="vacancy"
+            app:argType="com.gemastik.evenia.model.Vacancy" />
+    </fragment>
+</navigation>

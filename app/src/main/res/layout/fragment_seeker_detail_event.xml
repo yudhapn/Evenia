@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="vacancy_arg"
+            type="com.gemastik.evenia.model.Vacancy" />
+    </data>
+    <ScrollView
+        android:background="#F9F9F9"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context=".ui.SeekerDetailEventFragment">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/gl_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <ImageView
+                android:id="@+id/iv_poster"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:scaleType="fitXY"
+                app:imageUrl="@{vacancy_arg.backgroundImage}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_event_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="14dp"
+                app:setCamelCase="@{vacancy_arg.name}"
+                android:textColor="@color/colorWhite"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toStartOf="@id/gl_vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_location"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:drawableStart="@drawable/ic_location"
+                android:drawablePadding="8dp"
+                app:setCamelCase="@{vacancy_arg.location}"
+                android:textColor="@color/colorWhite"
+                app:layout_constraintEnd_toEndOf="@id/tv_event_name"
+                app:layout_constraintStart_toStartOf="@id/tv_event_name"
+                app:layout_constraintTop_toBottomOf="@id/tv_event_name" />
+
+            <TextView
+                android:id="@+id/tv_category"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="18dp"
+                app:setCamelCase="@{vacancy_arg.category}"
+                android:textAlignment="textEnd"
+                android:textColor="@color/colorWhite"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/gl_vertical"
+                app:layout_constraintTop_toTopOf="@id/tv_event_name" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/mcv_steps"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginEnd="18dp"
+                app:cardCornerRadius="4dp"
+                app:layout_constraintBottom_toBottomOf="@id/iv_poster"
+                app:layout_constraintEnd_toEndOf="@id/iv_poster"
+                app:layout_constraintStart_toStartOf="@id/iv_poster"
+                app:layout_constraintTop_toBottomOf="@id/iv_poster">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv_steps"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="18dp"
+                        android:text="Tahapan Seleksi"
+                        android:textColor="#ABABAB"
+                        app:layout_constraintHorizontal_bias="0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_value_steps"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="18dp"
+                        android:layout_marginBottom="8dp"
+                        android:minHeight="50dp"
+                        android:textColor="#DCA050"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@id/tv_steps"
+                        app:layout_constraintTop_toBottomOf="@id/tv_steps"
+                        app:layout_constraintVertical_bias="0" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/tv_provider"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/penyelenggara"
+                app:layout_constraintStart_toStartOf="@id/mcv_steps"
+                app:layout_constraintTop_toBottomOf="@id/mcv_steps" />
+
+            <ImageView
+                android:id="@+id/iv_avatar"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/erlangga_avatar"
+                app:layout_constraintStart_toStartOf="@id/tv_provider"
+                app:layout_constraintTop_toBottomOf="@id/tv_provider" />
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="Erlangga"
+                app:layout_constraintBottom_toBottomOf="@id/iv_avatar"
+                app:layout_constraintStart_toEndOf="@id/iv_avatar"
+                app:layout_constraintTop_toTopOf="@id/iv_avatar" />
+
+            <TextView
+                android:id="@+id/tv_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/deskripsi"
+                app:layout_constraintStart_toStartOf="@id/iv_avatar"
+                app:layout_constraintTop_toBottomOf="@id/iv_avatar" />
+
+            <TextView
+                android:id="@+id/tv_value_desc"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@{vacancy_arg.description}"
+                app:layout_constraintEnd_toEndOf="@id/mcv_steps"
+                app:layout_constraintStart_toStartOf="@id/tv_desc"
+                app:layout_constraintTop_toBottomOf="@id/tv_desc" />
+
+            <TextView
+                android:id="@+id/tv_value_step"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Pendaftaran"
+                app:layout_constraintStart_toStartOf="@id/tv_value_desc"
+                app:layout_constraintTop_toBottomOf="@id/tv_value_desc" />
+
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="29 September 2019 - 5 Oktober 2019"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/tv_value_step"
+                app:layout_constraintTop_toBottomOf="@id/tv_value_step" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_division"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:paddingTop="8dp"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/tv_value_desc"
+                app:layout_constraintStart_toStartOf="@id/tv_value_desc"
+                app:layout_constraintTop_toBottomOf="@id/tv_date"
+                app:spanCount="2"
+                tools:listitem="@layout/item_division" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

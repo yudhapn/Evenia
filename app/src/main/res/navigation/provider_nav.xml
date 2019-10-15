@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/provider_nav"
+    app:startDestination="@id/provider_home_dest">
+
+    <fragment
+        android:id="@+id/provider_home_dest"
+        android:name="com.gemastik.evenia.ui.ProviderHomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_provider_home" >
+        <action
+            android:id="@+id/action_recruitment"
+            app:destination="@id/provider_recruitment_dest"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/provider_recruitment_dest"
+        android:name="com.gemastik.evenia.ui.ProviderRecruitmentFragment"
+        android:label="Recruitment"
+        tools:layout="@layout/fragment_provider_recruitment" >
+        <argument
+            android:name="participant"
+            app:argType="com.gemastik.evenia.model.Participant" />
+    </fragment>
+    <fragment
+        android:id="@+id/provider_profile_dest"
+        android:name="com.gemastik.evenia.ui.ProviderProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_provider_profile" />
+    <fragment
+        android:id="@+id/provider_vacancy_dest"
+        android:name="com.gemastik.evenia.ui.ProviderVacancyFragment"
+        android:label="Vacancy"
+        tools:layout="@layout/fragment_provider_vacancy" >
+        <action
+            android:id="@+id/action_register_vacancy"
+            app:destination="@id/event_register_dest"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/event_register_dest"
+        android:name="com.gemastik.evenia.ui.EventRegisterFragment"
+        android:label="Event Register"
+        tools:layout="@layout/fragment_event_register" >
+        <action
+            android:id="@+id/action_vacancy"
+            app:destination="@id/provider_vacancy_dest"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/currentVacancyFragment"
+        android:name="com.gemastik.evenia.ui.CurrentVacancyFragment"
+        android:label="fragment_current_vacancy"
+        tools:layout="@layout/fragment_current_vacancy" />
+    <fragment
+        android:id="@+id/historyVacancyFragment"
+        android:name="com.gemastik.evenia.ui.HistoryVacancyFragment"
+        android:label="fragment_history_vacancy"
+        tools:layout="@layout/fragment_history_vacancy" />
+</navigation>

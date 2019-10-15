@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "723288693114",
+    "firebase_url": "https://evenia-14a01.firebaseio.com",
+    "project_id": "evenia-14a01",
+    "storage_bucket": "evenia-14a01.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:723288693114:android:94aa5e39f901b799791ec3",
+        "android_client_info": {
+          "package_name": "com.gemastik.evenia"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "723288693114-mlu7u99c3u1pg4l6ej69hcqvepct99gk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.gemastik.evenia",
+            "certificate_hash": "85b13c942e9bdf2834fbe08ba5253b5feaf053d4"
+          }
+        },
+        {
+          "client_id": "723288693114-n5gqk0dd0tg8v5i46h087ims764mb3mj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBISRIVFnEcX8K3rsxsMfzSZ37RELRGG78"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "723288693114-n5gqk0dd0tg8v5i46h087ims764mb3mj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

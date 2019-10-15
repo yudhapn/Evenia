@@ -1,0 +1,68 @@
+<resources>
+    <string name="app_name">Evenia</string>
+    <string name="home">home</string>
+    <string name="search">search</string>
+    <string name="library">library</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="selamat_datang">Selamat Datang</string>
+    <string name="masuk_untuk_melanjutkan">masuk untuk melanjutkan</string>
+    <string name="kata_sandi">kata sandi</string>
+    <string name="email">email</string>
+    <string name="buat_akun">Buat Akun</string>
+    <string name="masuk">Masuk</string>
+    <string name="lupa_kata_sandi">Lupa Kata Sandi?</string>
+    <string name="pilih_untuk_melanjutkan">pilih untuk melanjutkan</string>
+    <string name="pencari">Pencari</string>
+    <string name="penyelenggara">Penyelenggara</string>
+    <string name="lengkapi_data_anda">lengkapi data anda</string>
+    <string name="nama">Nama</string>
+    <string name="kategori">Kategori</string>
+    <string name="cari"><font size="14">cari..</font></string>
+    <string name="lowongan">Lowongan</string>
+    <string name="poster">poster</string>
+    <string name="icon">icon</string>
+    <string name="profil">Profil</string>
+    <string name="lamaran">Lamaran</string>
+    <string name="deskripsi">Deskripsi</string>
+    <string name="value_desc">Pameran perdagangan buku internasional terbesar di dunia berdasarkan jumlah peserta pameran dan jumlah pengunjung. Pameran ini dianggap sebagai pameran buku terpenting di dunia. Acara tahunan ini berlangsung selama lima hari pada bulan Oktober di Frankfurt Trade Fair di Frankfurt am Main, Jerman.</string>
+    <string name="info">Info</string>
+    <string name="peserta_gugur">Peserta Gugur</string>
+    <string name="peserta_wawancara">Peserta Wawancara</string>
+    <string name="total">Total</string>
+    <string name="tanggal_wawancara">Tanggal Wawancara</string>
+    <string name="daftar_peserta">Daftar Peserta</string>
+    <string name="terima">Terima</string>
+    <string name="tolak">Tolak</string>
+    <string name="riwayat">Riwayat</string>
+    <string name="nama_lowongan">Nama Lowongan</string>
+    <string name="data_lowongan">Data Lowongan</string>
+    <string name="atur_kategori">Atur Kategori</string>
+    <string name="lokasi">Lokasi</string>
+    <string name="atur_lokasi">Atur Lokasi</string>
+    <string name="divisi">Divisi</string>
+    <string name="tambah">+ Tambah</string>
+    <string name="timeline">Timeline</string>
+    <string name="penanggungjawab">Penanggung Jawab</string>
+    <string name="telepon">Telepon</string>
+    <string name="jenis_identitas">Jenis Identitas</string>
+    <string name="no_ktp_kitas">No. KTP / KITAS</string>
+    <string name="foto_ktp_kitas">Foto KTP / KITAS</string>
+    <string name="foto_diri_beserta_ktp_kitas">Foto Diri Beserta KTP / KITAS</string>
+    <string name="berlangsung">Berlangsung</string>
+    <string name="disclaimer">Dengan melanjutkan, kamu setuju dengan syarat dan ketentuan</string>
+    <string name="konfirmasi">Konfirmasi</string>
+    <string name="tunggu">Mohon Tunggu ...</string>
+
+    <string-array name="category">
+        <item>Pendidikan</item>
+        <item>Seni</item>
+        <item>Teknologi</item>
+        <item>Olahraga</item>
+    </string-array>
+    <string-array name="identity_type">
+        <item>KTP</item>
+        <item>KITAS</item>
+    </string-array>
+</resources>

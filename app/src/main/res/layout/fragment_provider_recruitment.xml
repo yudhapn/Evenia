@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F9F9F9"
+        tools:context=".ui.SeekerHomeFragment">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorWhite"
+            android:fitsSystemWindows="true">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fitsSystemWindows="true"
+                app:layout_scrollFlags="scroll|snap|exitUntilCollapsed">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#F9F9F9">
+
+                    <ImageView
+                        android:id="@+id/iv_seeker_poster"
+                        android:layout_width="match_parent"
+                        android:layout_height="390dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/provider_recruitment_poster"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <com.google.android.material.appbar.MaterialToolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:background="#2E4D68"
+                    app:layout_collapseMode="pin"
+                    app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/toolbar_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/mcv_approvement"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:cardCornerRadius="4dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <ImageView
+                                    android:id="@+id/iv_avatar"
+                                    android:layout_width="70dp"
+                                    android:layout_height="50dp"
+                                    android:layout_margin="18dp"
+                                    android:src="@drawable/avatar"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/tv_name"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="Deni Sumargo"
+                                    app:layout_constraintEnd_toStartOf="@+id/tv_add_note"
+                                    app:layout_constraintHorizontal_bias="0"
+                                    app:layout_constraintStart_toEndOf="@id/iv_avatar"
+                                    app:layout_constraintTop_toTopOf="@id/iv_avatar" />
+
+                                <TextView
+                                    android:id="@+id/tv_personality"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="Petualang"
+                                    android:textColor="#DCA050"
+                                    app:layout_constraintEnd_toEndOf="@id/tv_name"
+                                    app:layout_constraintHorizontal_bias="0"
+                                    app:layout_constraintStart_toStartOf="@id/tv_name"
+                                    app:layout_constraintTop_toBottomOf="@id/tv_name" />
+
+                                <TextView
+                                    android:id="@+id/tv_origin"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="Universitas Brawijaya"
+                                    app:layout_constraintEnd_toEndOf="@id/tv_personality"
+                                    app:layout_constraintHorizontal_bias="0"
+                                    app:layout_constraintStart_toStartOf="@id/tv_personality"
+                                    app:layout_constraintTop_toBottomOf="@id/tv_personality" />
+
+                                <com.google.android.material.card.MaterialCardView
+                                    android:id="@+id/mcv_type_div"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="16dp"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="@+id/tv_name">
+
+                                    <TextView
+                                        android:id="@+id/tv_type_div"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:background="#689DCB"
+                                        android:paddingStart="8dp"
+                                        android:paddingTop="4dp"
+                                        android:paddingEnd="8dp"
+                                        android:paddingBottom="4dp"
+                                        android:text="Logistik"
+                                        android:textColor="@color/colorWhite" />
+                                </com.google.android.material.card.MaterialCardView>
+
+                                <TextView
+                                    android:id="@+id/tv_add_note"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4dp"
+                                    android:text="Tambah catatan"
+                                    android:textColor="#2E4D68"
+                                    android:textSize="12sp"
+                                    app:layout_constraintEnd_toEndOf="@+id/mcv_type_div"
+                                    app:layout_constraintTop_toBottomOf="@+id/mcv_type_div" />
+
+                                <com.google.android.material.button.MaterialButton
+                                    android:id="@+id/btn_accept"
+                                    style="@style/Widget.MaterialComponents.Button.Icon"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="12dp"
+                                    android:layout_marginBottom="12dp"
+                                    android:includeFontPadding="false"
+                                    android:text="@string/terima"
+                                    android:textColor="@color/colorBlack"
+                                    app:backgroundTint="@color/colorWhite"
+                                    app:icon="@drawable/ic_approved"
+                                    app:iconSize="20dp"
+                                    app:iconTint="#27C60A"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toStartOf="@+id/btn_decline"
+                                    app:layout_constraintHorizontal_bias="0"
+                                    app:layout_constraintStart_toStartOf="@id/tv_origin"
+                                    app:layout_constraintTop_toBottomOf="@id/tv_origin" />
+
+                                <com.google.android.material.button.MaterialButton
+                                    android:id="@+id/btn_decline"
+                                    style="@style/Widget.MaterialComponents.Button.Icon"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="4dp"
+                                    android:backgroundTint="@color/colorWhite"
+                                    android:text="@string/tolak"
+                                    android:textColor="@color/colorBlack"
+                                    app:icon="@drawable/ic_declined"
+                                    app:iconSize="18dp"
+                                    app:iconTint="#D91A1A"
+                                    app:layout_constraintEnd_toEndOf="@+id/tv_add_note"
+                                    app:layout_constraintHorizontal_bias="0.5"
+                                    app:layout_constraintStart_toEndOf="@+id/btn_accept"
+                                    app:layout_constraintTop_toTopOf="@+id/btn_accept" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </com.google.android.material.appbar.MaterialToolbar>
+
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+            <TextView
+                android:id="@+id/tv_history"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="22dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/riwayat"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_followed_event"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="12dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/tv_history"
+                app:layout_constraintStart_toStartOf="@id/tv_history"
+                app:layout_constraintTop_toBottomOf="@id/tv_history"
+                tools:listitem="@layout/item_followed_event" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>

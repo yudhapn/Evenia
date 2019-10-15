@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="registerVM"
+            type="com.gemastik.evenia.viewmodel.RegisterViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#F9F9F9">
+
+                <ImageView
+                    android:id="@+id/iv_seeker_poster"
+                    android:layout_width="match_parent"
+                    android:layout_height="370dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/provider_register_poster"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <ImageButton
+                    android:id="@+id/iv_background"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginTop="150dp"
+                    android:layout_marginEnd="18dp"
+                    android:background="@drawable/button_image_placeholder"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_vac_data"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginTop="18dp"
+                    android:text="@string/data_lowongan"
+                    android:textColor="@color/colorWhite"
+                    app:layout_constraintStart_toStartOf="@id/iv_background"
+                    app:layout_constraintTop_toBottomOf="@id/iv_background" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/mcv_vac_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    app:cardCornerRadius="4dp"
+                    app:layout_constraintEnd_toEndOf="@id/iv_background"
+                    app:layout_constraintStart_toStartOf="@id/iv_background"
+                    app:layout_constraintTop_toBottomOf="@id/tv_vac_data">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_vac_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#fff"
+                        android:hint="@string/nama_lowongan"
+                        android:inputType="text"
+                        android:padding="10dp"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/mcv_description"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    app:cardCornerRadius="4dp"
+                    app:layout_constraintEnd_toEndOf="@id/mcv_vac_name"
+                    app:layout_constraintStart_toStartOf="@id/mcv_vac_name"
+                    app:layout_constraintTop_toBottomOf="@id/mcv_vac_name">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_desc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#fff"
+                        android:hint="@string/deskripsi"
+                        android:inputType="textMultiLine"
+                        android:padding="10dp"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/mcv_category"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    app:cardCornerRadius="4dp"
+                    app:layout_constraintEnd_toEndOf="@id/mcv_description"
+                    app:layout_constraintStart_toStartOf="@id/mcv_description"
+                    app:layout_constraintTop_toBottomOf="@id/mcv_description">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/til_category"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            app:hintEnabled="false"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <AutoCompleteTextView
+                                android:id="@+id/category_dropdown"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="#fff"
+                                android:focusable="false"
+                                android:hint="@string/kategori"
+                                android:padding="10dp"
+                                android:textColorHint="?android:textColorHint"
+                                android:textSize="14sp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/mcv_location"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    app:cardCornerRadius="4dp"
+                    app:layout_constraintEnd_toEndOf="@id/mcv_category"
+                    app:layout_constraintStart_toStartOf="@id/mcv_category"
+                    app:layout_constraintTop_toBottomOf="@id/mcv_category">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_location"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:background="#fff"
+                            android:hint="@string/lokasi"
+                            android:inputType="text"
+                            android:padding="10dp"
+                            android:textSize="14sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/tv_set_location"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tv_set_location"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:background="#fff"
+                            android:drawableEnd="@drawable/ic_location_black"
+                            android:drawablePadding="4dp"
+                            android:hint="@string/atur_lokasi"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <TextView
+                    android:id="@+id/tv_division"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginTop="18dp"
+                    android:text="@string/divisi"
+                    app:layout_constraintStart_toStartOf="@id/mcv_location"
+                    app:layout_constraintTop_toBottomOf="@id/mcv_location" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_div_add"
+                    style="@style/Widget.MaterialComponents.Button.Icon"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/tambah"
+                    app:backgroundTint="#5B8FB8"
+                    app:layout_constraintEnd_toEndOf="@id/mcv_location"
+                    app:layout_constraintStart_toStartOf="@id/mcv_location"
+                    app:layout_constraintTop_toBottomOf="@id/tv_division" />
+
+                <TextView
+                    android:id="@+id/tv_timeline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginTop="18dp"
+                    android:text="@string/timeline"
+                    app:layout_constraintStart_toStartOf="@id/btn_div_add"
+                    app:layout_constraintTop_toBottomOf="@id/btn_div_add" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_timeline_add"
+                    style="@style/Widget.MaterialComponents.Button.Icon"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/tambah"
+                    app:backgroundTint="#5B8FB8"
+                    app:layout_constraintEnd_toEndOf="@id/btn_div_add"
+                    app:layout_constraintStart_toStartOf="@id/btn_div_add"
+                    app:layout_constraintTop_toBottomOf="@id/tv_timeline" />
+
+                <TextView
+                    android:id="@+id/tv_pic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginTop="18dp"
+                    android:text="@string/penanggungjawab"
+                    app:layout_constraintStart_toStartOf="@id/btn_timeline_add"
+                    app:layout_constraintTop_toBottomOf="@id/btn_timeline_add" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/mcv_pic"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    app:cardCornerRadius="4dp"
+                    app:layout_constraintEnd_toEndOf="@id/btn_timeline_add"
+                    app:layout_constraintStart_toStartOf="@id/btn_timeline_add"
+                    app:layout_constraintTop_toBottomOf="@id/tv_pic">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_pic_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#fff"
+                            android:hint="@string/nama"
+                            android:inputType="text"
+                            android:padding="10dp"
+                            android:textSize="14sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <View
+                            android:id="@+id/separator1"
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:background="@drawable/dotted"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/et_pic_name" />
+
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_pic_phone"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:background="#fff"
+                            android:hint="@string/telepon"
+                            android:inputType="phone"
+                            android:padding="10dp"
+                            android:textSize="14sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="@id/et_pic_name"
+                            app:layout_constraintStart_toStartOf="@id/et_pic_name"
+                            app:layout_constraintTop_toBottomOf="@id/separator1"
+                            app:layout_constraintVertical_bias="0" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/mcv_pic2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    app:cardCornerRadius="4dp"
+                    app:layout_constraintEnd_toEndOf="@id/mcv_pic"
+                    app:layout_constraintStart_toStartOf="@id/mcv_pic"
+                    app:layout_constraintTop_toBottomOf="@id/mcv_pic">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/til_pic_ident"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            app:hintEnabled="false"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <AutoCompleteTextView
+                                android:id="@+id/pic_ident_dropdown"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="#fff"
+                                android:focusable="false"
+                                android:hint="@string/jenis_identitas"
+                                android:padding="10dp"
+                                android:textColorHint="?android:textColorHint"
+                                android:textSize="14sp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <View
+                            android:id="@+id/separator2"
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:background="@drawable/dotted"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/til_pic_ident" />
+
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_pic_ident_num"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:background="#fff"
+                            android:hint="@string/no_ktp_kitas"
+                            android:inputType="number"
+                            android:padding="10dp"
+                            android:textSize="14sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="@id/til_pic_ident"
+                            app:layout_constraintStart_toStartOf="@id/til_pic_ident"
+                            app:layout_constraintTop_toBottomOf="@id/separator2"
+                            app:layout_constraintVertical_bias="0" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <TextView
+                    android:id="@+id/tv_photo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginTop="18dp"
+                    android:text="@string/foto_ktp_kitas"
+                    app:layout_constraintStart_toStartOf="@id/mcv_pic2"
+                    app:layout_constraintTop_toBottomOf="@id/mcv_pic2" />
+
+                <ImageButton
+                    android:id="@+id/iv_photo_ktp"
+                    android:layout_width="290dp"
+                    android:layout_height="140dp"
+                    android:layout_marginTop="18dp"
+                    android:background="@drawable/button_image_placeholder"
+                    app:layout_constraintEnd_toEndOf="@+id/mcv_pic2"
+                    app:layout_constraintStart_toStartOf="@+id/mcv_pic2"
+                    app:layout_constraintTop_toBottomOf="@id/tv_photo" />
+
+                <TextView
+                    android:id="@+id/tv_photo2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginTop="18dp"
+                    android:text="@string/foto_diri_beserta_ktp_kitas"
+                    app:layout_constraintStart_toStartOf="@id/iv_photo_ktp"
+                    app:layout_constraintTop_toBottomOf="@id/iv_photo_ktp" />
+
+                <ImageButton
+                    android:id="@+id/iv_photo_ktp_person"
+                    android:layout_width="290dp"
+                    android:layout_height="140dp"
+                    android:layout_marginTop="18dp"
+                    android:background="@drawable/button_image_placeholder"
+                    app:layout_constraintEnd_toEndOf="@+id/mcv_pic2"
+                    app:layout_constraintStart_toStartOf="@+id/mcv_pic2"
+                    app:layout_constraintTop_toBottomOf="@id/tv_photo2" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/mcv_disclaimer"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    app:cardCornerRadius="4dp"
+                    app:layout_constraintEnd_toEndOf="@id/btn_timeline_add"
+                    app:layout_constraintStart_toStartOf="@id/btn_timeline_add"
+                    app:layout_constraintTop_toBottomOf="@id/iv_photo_ktp_person">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <com.google.android.material.checkbox.MaterialCheckBox
+                            android:id="@+id/mcb_disclaimer"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                        <TextView
+                            android:id="@+id/tv_disclaimer"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/disclaimer"
+                            android:textSize="12sp"
+                            app:layout_constraintBottom_toBottomOf="@id/mcb_disclaimer"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/mcb_disclaimer"
+                            app:layout_constraintTop_toTopOf="@id/mcb_disclaimer" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_submit"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:enabled="false"
+                    android:text="@string/konfirmasi"
+                    app:backgroundTint="#5B8FB8"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@id/mcv_disclaimer"
+                    app:layout_constraintStart_toStartOf="@id/mcv_disclaimer"
+                    app:layout_constraintTop_toBottomOf="@id/mcv_disclaimer"
+                    app:layout_constraintVertical_bias="0" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+        <include
+            android:id="@+id/progressbar"
+            layout="@layout/progress_bar_layout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
